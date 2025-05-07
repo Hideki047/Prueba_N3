@@ -1,123 +1,118 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-function PaginaPrincipal() {
-  // Lista de eventos próximos
-  const eventos = [
-    {
-      id: 1,
-      nombre: 'Fiesta Retro',
-      fecha: '2024-06-30T22:00:00',
-      descripcion: '¡Ven con tus mejores atuendos de los 80!',
-      imagen: '[AQUÍ VA LA IMAGEN DEL EVENTO]'
-    },
-    {
-      id: 2,
-      nombre: 'Noche Latina',
-      fecha: '2024-07-15T21:00:00',
-      descripcion: 'Ritmos latinos toda la noche.',
-      imagen: '[AQUÍ VA LA IMAGEN DEL EVENTO]'
-    }
-  ];
-
-  // Estado para la cuenta regresiva
-  const [tiempoRestante, setTiempoRestante] = useState({});
-
-  // Actualizar la cuenta regresiva cada segundo
-  useEffect(() => {
-    const fechaEvento = new Date(eventos[0].fecha);
-    const temporizador = setInterval(() => {
-      const ahora = new Date();
-      const diferencia = fechaEvento - ahora;
-      
-      if (diferencia <= 0) {
-        clearInterval(temporizador);
-        setTiempoRestante({});
-      } else {
-        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-        const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
-        const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
-        const segundos = Math.floor((diferencia / 1000) % 60);
-        setTiempoRestante({ dias, horas, minutos, segundos });
-      }
-    }, 1000);
-
-    return () => clearInterval(temporizador);
-  }, []);
-
+const PaginaPrincipal = () => {
   return (
-    <div>
-      {/* Banner principal */}
-      <section className="banner">
-        <div className="contenido-banner">
-          <h2>¡Baila toda la noche con Disco Stu!</h2>
-          <p>[AQUÍ VA UNA ANIMACIÓN O VIDEO]</p>
-        </div>
-      </section>
+    <div className="disco-theme">
 
-      {/* Sección de eventos */}
-      <section className="eventos">
-        <h2>Próximos Eventos</h2>
-        <div className="lista-eventos">
-          {eventos.map(evento => (
-            <div key={evento.id} className="evento">
-              <div className="imagen-evento">
-                {evento.imagen}
-              </div>
-              <h3>{evento.nombre}</h3>
-              <p>{evento.descripcion}</p>
-              <p>Fecha: {new Date(evento.fecha).toLocaleString()}</p>
-              <Link to={`/eventos/${evento.id}`}>Ver más</Link>
-            </div>
-          ))}
-        </div>
-
-        {/* Cuenta regresiva */}
-        {tiempoRestante.dias !== undefined && (
-          <div className="cuenta-regresiva">
-            <h3>Falta para {eventos[0].nombre}</h3>
-            <p>
-              {tiempoRestante.dias} días {tiempoRestante.horas} horas {tiempoRestante.minutos} minutos {tiempoRestante.segundos} segundos
-            </p>
+      {/* Navbar */}
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark disco-nav">
+        <div className="container">
+          <Link className="navbar-brand disco-text" to="/">
+            <img src="/Imagenes/bola_cristal.gif" alt="Disco Ball" className="disco-icon" />
+            Disco Stu's
+          </Link>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <Link className="nav-link disco-link" to="/">Inicio</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link disco-link" to="/eventos">Eventos</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link disco-link" to="/galeria">Galería</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link disco-link" to="/contacto">Contacto</Link>
+              </li>
+            </ul>
           </div>
-        )}
+        </div>
+      </nav>
+
+      <div className="hero-section position-relative">
+        <div className="container">
+          <div className="row min-vh-100 align-items-center">
+            <div className="col-lg-6 text-center text-lg-start">
+              <h1 className="display-1 disco-title">¡Baila toda la noche Disco Stu's!</h1>
+              <p className="lead disco-text">La mejor música disco de los 70s</p>
+              <Link to="/eventos" className="btn btn-lg disco-btn">Ver Eventos</Link>
+            </div>
+            <div className="col-lg-6">
+              <img src="/Imagenes/disco-stu.gif" alt="Disco Stu" className="img-fluid disco-image" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <section className="features py-5">
+        <div className="container">
+          <div className="row g-4">
+            <div className="col-md-4">
+              <div className="card disco-card h-100">
+                <img src="/Imagenes/mr-burns-dance.gif" alt="Mr. Burns Dancing" className="card-img-top" />
+                <div className="card-body">
+                  <h3 className="card-title disco-text">DJ en Vivo</h3>
+                  <p className="card-text">Los mejores DJs de la escena disco</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card disco-card h-100">
+                <img src="/Imagenes/the-simpsons-simpsons.gif" alt="Dance Floor" className="card-img-top" />
+                <div className="card-body">
+                  <h3 className="card-title disco-text">Pista de Baile</h3>
+                  <p className="card-text">La pista más grande de la ciudad</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card disco-card h-100">
+                <img src="/Imagenes/sugar-eating-sugar.gif" alt="Cocktails" className="card-img-top" />
+                <div className="card-body">
+                  <h3 className="card-title disco-text">Bar VIP</h3>
+                  <p className="card-text">Los mejores cócteles de la ciudad</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* Promociones */}
-      <section className="promociones">
-        <h2>Promociones Especiales</h2>
-        <ul>
-          <li>2x1 en entradas antes de las 11 pm</li>
-          <li>Happy hour de bebidas de 10 pm a 12 am</li>
-        </ul>
-      </section>
-
-      {/* Pie de página */}
-      <footer>
-        <div className="contacto">
-          <h3>Contacto</h3>
-          <p>Teléfono: 123-456-789</p>
-          <p>Email: info@discostu.com</p>
-        </div>
-        <div className="redes">
-          <h3>Síguenos</h3>
-          <a href="#">Facebook</a>
-          <a href="#">Instagram</a>
-          <a href="#">Twitter</a>
-        </div>
-        <div className="boletin">
-          <h3>Suscríbete al boletín</h3>
-          <form onSubmit={e => {
-            e.preventDefault();
-            alert('¡Gracias por suscribirte!');
-          }}>
-            <input type="email" placeholder="Tu correo" required />
-            <button type="submit">Suscribir</button>
-          </form>
+      {/* Footer */}
+      <footer className="disco-footer py-4">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-4">
+              <h4 className="disco-text">Disco Stu's</h4>
+              <p>La mejor discoteca de los 70s</p>
+            </div>
+            <div className="col-md-4">
+              <h4 className="disco-text">Enlaces Rápidos</h4>
+              <ul className="list-unstyled">
+                <li><Link to="/eventos" className="disco-link">Eventos</Link></li>
+                <li><Link to="/galeria" className="disco-link">Galería</Link></li>
+                <li><Link to="/contacto" className="disco-link">Contacto</Link></li>
+              </ul>
+            </div>
+            <div className="col-md-4">
+              <h4 className="disco-text">Síguenos</h4>
+              <div className="social-links">
+                <a href="#" className="disco-link me-3"><i className="bi bi-facebook"></i></a>
+                <a href="#" className="disco-link me-3"><i className="bi bi-instagram"></i></a>
+                <a href="#" className="disco-link"><i className="bi bi-twitter"></i></a>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
   );
-}
+};
 
 export default PaginaPrincipal;

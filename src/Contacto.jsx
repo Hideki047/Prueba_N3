@@ -2,13 +2,13 @@ import React,{useState}from'react';
 
 function Contacto(){
     
-  const[form,setForm]=useState({nombre:'',email:'',mensaje:''});
+  const[form,setForm]=useState({nombre:'', email:'', mensaje:''});
   const[errores,setErrores]=useState({});
   const[enviado,setEnviado]=useState(false);
 
   function cambios(e){
-    const{name,value}=e.target;
-    setForm(prev=>({...prev,[name]:value}));
+    const{name: nombre,value}=e.target;
+    setForm(prev=>({...prev,[nombre]:value}));
   }
 
   function submit(e){
@@ -24,12 +24,11 @@ function Contacto(){
   return(
     <div>
       <h1>Contacto</h1>
-      <p>Dirección: Calle Disco 123, Ciudad</p>
-      <p>Tel: 123-456-789</p>
-      <p>Email: contacto@discostu.com</p>
+      <p>Dirección: Calle 742 de Evergreen Terrace, Springfield</p>
+      <p>Telefono: 047-362-999</p>
+      <p>Email: contacto@disco.stus.cl</p>
       <p>Redes: <a href="#">Facebook</a> <a href="#">Instagram</a> <a href="#">Twitter</a></p>
-
-      {/* aquí debe ir [mapa] */}
+      
       {!enviado?
         <form onSubmit={submit}>
 
