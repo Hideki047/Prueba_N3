@@ -22,7 +22,6 @@ function Contacto(){
   }
 
   return(
-    
     <div>
       <h1>Contacto</h1>
       <p>Dirección: Calle 742 de Evergreen Terrace, Springfield</p>

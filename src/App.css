@@ -1,4 +1,4 @@
-/* Variables de colores disco */
+
 :root {
   --neon-rosa: #ff00ff;
   --neon-azul: #00ffff;
@@ -10,7 +10,7 @@
   --gradiente-disco: linear-gradient(45deg, var(--neon-rosa), var(--neon-morado), var(--neon-azul));
 }
 
-/* Estilos generales */
+
 * {
   margin: 0;
   padding: 0;
@@ -29,7 +29,6 @@ body {
   flex-direction: column;
 }
 
-/* Encabezado */
 header {
   background: var(--gradiente-disco);
   color: var(--texto-claro);
@@ -81,7 +80,6 @@ nav a:hover {
   box-shadow: 0 0 15px var(--neon-rosa);
 }
 
-/* Contenido principal */
 main {
   flex: 1;
   padding: 2rem;
@@ -90,7 +88,6 @@ main {
   width: 100%;
 }
 
-/* Banner */
 .banner {
   background: var(--gradiente-disco);
   color: var(--texto-claro);
@@ -135,7 +132,6 @@ main {
   animation: brillo 2s infinite;
 }
 
-/* Eventos */
 .eventos {
   margin-bottom: 4rem;
   padding: 0 2rem;
@@ -222,7 +218,6 @@ main {
   box-shadow: 0 0 20px var(--neon-rosa);
 }
 
-/* Cuenta regresiva */
 .cuenta-regresiva {
   text-align: center;
   margin: 3rem auto;
@@ -249,7 +244,6 @@ main {
   text-shadow: 0 0 5px var(--neon-azul);
 }
 
-/* Promociones */
 .promociones {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
@@ -285,7 +279,6 @@ main {
   border: 1px solid var(--neon-rosa);
 }
 
-/* Pie de página */
 footer {
   background: var(--gradiente-disco);
   color: var(--texto-claro);
@@ -376,7 +369,6 @@ footer button:hover {
   transform: scale(1.02);
 }
 
-/* Responsive */
 @media (max-width: 1200px) {
   .banner h2 {
     font-size: 3rem;
@@ -434,7 +426,6 @@ footer button:hover {
   }
 }
 
-/* Para pantallas muy pequeñas */
 @media (max-width: 480px) {
   .banner h2 {
     font-size: 1.5rem;
@@ -449,7 +440,6 @@ footer button:hover {
   }
 }
 
-/* Navbar */
 .disco-nav {
   background: transparent !important;
   box-shadow: none !important;
@@ -496,7 +486,7 @@ footer button:hover {
   text-shadow: 0 0 10px var(--neon-rosa);
 }
 
-/* Hero Section */
+
 .hero-section {
   background: var(--gradiente-disco);
   min-height: 100vh;
@@ -552,7 +542,6 @@ footer button:hover {
   box-shadow: 0 0 30px var(--neon-rosa);
 }
 
-/* Features Section */
 .features {
   background-color: var(--fondo-oscuro);
   padding: 5rem 0;
@@ -589,7 +578,6 @@ footer button:hover {
   text-shadow: 0 0 10px var(--neon-amarillo);
 }
 
-/* Footer */
 .disco-footer {
   background: var(--gradiente-disco);
   color: var(--texto-claro);
@@ -631,7 +619,6 @@ footer button:hover {
   100% { text-shadow: 0 0 10px var(--neon-azul); }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .disco-title {
     font-size: 2.5rem;
@@ -660,7 +647,6 @@ footer button:hover {
   }
 }
 
-/* Estilos para la galería */
 .galeria-container {
   min-height: 100vh;
   background-color: var(--fondo-oscuro);
@@ -710,7 +696,6 @@ footer button:hover {
   padding: 0.5rem;
 }
 
-/* Modal */
 .modal {
   background-color: rgba(0, 0, 0, 0.8);
 }

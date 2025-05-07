@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-
-
 function Blog() {
   const posts = [
     {
@@ -26,7 +24,6 @@ function Blog() {
     posts.reduce((acc, p) => ({ ...acc, [p.id]: 0 }), {})
   );
   const [comments, setComments] = useState({});
-
   const [newComment, setNewComment] = useState('');
 
   function seleccionar(post) {
@@ -60,7 +57,6 @@ function Blog() {
 
   return (
     <div>
-
       { !selected ? (
 
         <div>
