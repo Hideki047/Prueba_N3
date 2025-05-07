@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 
-// Importamos las páginas
 import Inicio from './PaginaPrincipal.jsx';
 import Eventos from './Eventos.jsx';
 import Galeria from './Galeria.jsx';
@@ -15,7 +14,6 @@ function App() {
     <Router>
       <div className="pagina">
         
-        {/* Encabezado con el menú */}
         <header>
           <h1>Disco Stu's Dance Palace</h1>
           <nav>
@@ -28,7 +26,6 @@ function App() {
           </nav>
         </header>
 
-        {/* Contenido principal */}
         <main>
           <Routes>
             <Route path="/" element={<Inicio />} />

@@ -22,12 +22,13 @@ function Contacto(){
   }
 
   return(
+    
     <div>
       <h1>Contacto</h1>
       <p>Dirección: Calle 742 de Evergreen Terrace, Springfield</p>
       <p>Telefono: 047-362-999</p>
       <p>Email: contacto@disco.stus.cl</p>
-      <p>Redes: <a href="#">Facebook</a> <a href="#">Instagram</a> <a href="#">Twitter</a></p>
+      <p>Redes: <a href="#">Facebook</a> <a href="#">Instagram</a></p>
       
       {!enviado?
         <form onSubmit={submit}>

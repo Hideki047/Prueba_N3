@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Galeria = () => {
-  // Datos de las imágenes con metadatos
   const imagenes = [
     {
       id: 1,
@@ -168,18 +167,15 @@ const Galeria = () => {
     }
   ];
 
-  // Estados para filtros y modal
   const [filtroAño, setFiltroAño] = useState('');
   const [filtroEvento, setFiltroEvento] = useState('');
   const [filtroTipo, setFiltroTipo] = useState('');
   const [imagenSeleccionada, setImagenSeleccionada] = useState(null);
 
-  // Obtener valores únicos para los filtros
   const años = [...new Set(imagenes.map(img => img.año))].sort();
   const eventos = [...new Set(imagenes.map(img => img.evento))];
   const tipos = [...new Set(imagenes.map(img => img.tipo))];
 
-  // Filtrar imágenes
   const imagenesFiltradas = imagenes.filter(img => {
     return (
       (!filtroAño || img.año === parseInt(filtroAño)) &&
@@ -190,7 +186,6 @@ const Galeria = () => {
 
   return (
     <div className="galeria-container">
-      {/* Navbar */}
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark disco-nav">
         <div className="container">
           <Link className="navbar-brand disco-text" to="/">
@@ -219,7 +214,6 @@ const Galeria = () => {
         </div>
       </nav>
 
-      {/* Filtros */}
       <div className="container mt-4">
         <div className="row">
           <div className="col-md-4 mb-3">
@@ -261,7 +255,7 @@ const Galeria = () => {
         </div>
       </div>
 
-      {/* Galería de imágenes */}
+
       <div className="container mt-4">
         <div className="row g-4">
           {imagenesFiltradas.map(imagen => (
@@ -289,7 +283,6 @@ const Galeria = () => {
         </div>
       </div>
 
-      {/* Modal para imagen ampliada */}
       {imagenSeleccionada && (
         <div className="modal fade show" style={{ display: 'block' }} tabIndex="-1">
           <div className="modal-dialog modal-lg modal-dialog-centered">
@@ -320,7 +313,6 @@ const Galeria = () => {
         </div>
       )}
 
-      {/* Footer */}
       <footer className="disco-footer py-4 mt-5">
         <div className="container">
           <div className="row">

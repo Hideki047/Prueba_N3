@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 
-function BlogPage() {
+function Blog() {
   const posts = [
     {
       id: 1,
@@ -21,11 +21,11 @@ function BlogPage() {
   ];
 
 
-  const [selected, setSelected]   = useState(null);
-  const [votes, setVotes]         = useState(
+  const [selected, setSelected] = useState(null);
+  const [votes, setVotes]  = useState(
     posts.reduce((acc, p) => ({ ...acc, [p.id]: 0 }), {})
   );
-  const [comments, setComments]   = useState({});
+  const [comments, setComments] = useState({});
 
   const [newComment, setNewComment] = useState('');
 
@@ -45,7 +45,7 @@ function BlogPage() {
     }));
   }
 
-  function handleCommentSubmit(e) {
+  function ComentarioSubmit(e) {
     e.preventDefault();
     if (!newComment.trim()) return;
     setComments(prev => ({
@@ -57,7 +57,6 @@ function BlogPage() {
     }));
     setNewComment('');
   }
-
 
   return (
     <div>
@@ -104,7 +103,7 @@ function BlogPage() {
             ))}
           </ul>
 
-          <form onSubmit={handleCommentSubmit}>
+          <form onSubmit={ComentarioSubmit}>
             <textarea
               rows="3"
               placeholder="Escribe un comentario…"
@@ -122,4 +121,4 @@ function BlogPage() {
   );
 }
 
-export default BlogPage;
+export default Blog;

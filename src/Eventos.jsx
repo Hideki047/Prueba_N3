@@ -32,14 +32,14 @@ function Eventos() {
   const [enviado, setEnviado] = useState(false);
 
 
-  function handleSelect(evt) {
+  function seleccion_a_mano(evt) {
       setEventoSel(evt);
       setEnviado(false);
       setFormData({ nombre: '', email: '', tickets: 1 });
       setErrores({});
   }
 
-  function handleChange(e) {
+  function cambio_a_mano(e) {
     const { name, value } = e.target;
 
     setFormData(prev => ({
@@ -48,7 +48,7 @@ function Eventos() {
     }));
   }
 
-  function handleSubmit(e) {
+  function submit_a_mano(e) {
     e.preventDefault();
     let errs = {};
     if (!formData.nombre.trim()) {
@@ -66,7 +66,6 @@ function Eventos() {
     }
   }
 
-
   return (
     <div>
       <h1>Eventos</h1>
@@ -78,7 +77,7 @@ function Eventos() {
               <h3>{ev.nombre}</h3>
               <p> {ev.fecha} - {ev.hora} </p>
               <p>Lugar: {ev.lugar}</p>
-              <button onClick={() => handleSelect(ev)}>
+              <button onClick={() => seleccion_a_mano(ev)}>
                 Ver detalles
               </button>
             </li>
@@ -100,14 +99,14 @@ function Eventos() {
           <h3>Reservar Entradas</h3>
 
           { !enviado ? (
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={submit_a_mano}>
               <div>
                 <label>Nombre:</label>
                 <input
                   type="text"
                   name="nombre"
                   value={formData.nombre}
-                  onChange={handleChange}
+                  onChange={cambio_a_mano}
                 />
                 { errores.nombre && <span>{errores.nombre}</span> }
               </div>
@@ -118,7 +117,7 @@ function Eventos() {
                   type="email"
                   name="email"
                   value={formData.email}
-                  onChange={handleChange}
+                  onChange={cambio_a_mano}
                 />
                 { errores.email && <span>{errores.email}</span> }
               </div>
@@ -129,7 +128,7 @@ function Eventos() {
                   type="number"
                   name="tickets"
                   value={formData.tickets}
-                  onChange={handleChange}
+                  onChange={cambio_a_mano}
                   min="1"
                 />
                 { errores.tickets && <span>{errores.tickets}</span> }
