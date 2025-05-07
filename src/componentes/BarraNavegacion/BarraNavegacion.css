@@ -1,0 +1,64 @@
+.navbar {
+  padding: 1rem 0;
+  background: var(--gradiente-disco) !important;
+  box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--color-texto) !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+}
+
+.nav-link {
+  color: var(--color-texto) !important;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-accento);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: var(--color-accento) !important;
+  transform: translateY(-2px);
+}
+
+.navbar-toggler {
+  border: 2px solid var(--color-texto);
+  padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 15px var(--color-primario);
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: rgba(26, 26, 26, 0.95);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+} 

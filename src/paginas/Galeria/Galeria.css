@@ -1,0 +1,159 @@
+.pagina-galeria {
+  background-color: var(--color-fondo);
+  min-height: 100vh;
+}
+
+.pagina-galeria h1 {
+  color: var(--color-primario);
+  font-weight: 700;
+}
+
+.form-select {
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-select:focus {
+  border-color: var(--color-accento);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.galeria-card {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.galeria-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.imagen-container {
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* Aspect ratio 4:3 */
+  overflow: hidden;
+}
+
+.cargando-imagen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.galeria-imagen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.galeria-imagen.cargando {
+  opacity: 0;
+}
+
+.galeria-imagen.cargada {
+  opacity: 1;
+}
+
+.galeria-card .card-title {
+  color: var(--color-primario);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.galeria-card .card-text {
+  color: var(--color-secundario);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.galeria-metadata {
+  margin-top: 1rem;
+}
+
+.galeria-metadata .badge {
+  font-size: 0.8rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 1rem;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow: auto;
+  position: relative;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.modal-info {
+  background-color: white;
+}
+
+.modal-info h3 {
+  color: var(--color-primario);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.modal-info p {
+  color: var(--color-secundario);
+  margin-bottom: 1rem;
+}
+
+.btn-close {
+  background-color: white;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.btn-close:hover {
+  opacity: 1;
+}
+
+@media (max-width: 767.98px) {
+  .modal-content {
+    max-width: 95%;
+  }
+  
+  .galeria-imagen {
+    height: 150px;
+  }
+} 

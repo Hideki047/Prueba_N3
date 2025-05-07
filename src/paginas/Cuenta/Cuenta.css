@@ -1,0 +1,78 @@
+.pagina-cuenta {
+  background-color: var(--color-fondo);
+  min-height: 100vh;
+}
+
+.pagina-cuenta h1 {
+  color: var(--color-primario);
+  font-weight: 700;
+}
+
+.card {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+  color: var(--color-primario);
+  font-weight: 500;
+}
+
+.form-control {
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--color-accento);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.list-group-item {
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.list-group-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item h6 {
+  color: var(--color-primario);
+  font-weight: 600;
+}
+
+.badge {
+  padding: 0.5rem 0.75rem;
+  font-weight: 500;
+}
+
+@media (max-width: 767.98px) {
+  .card {
+    margin: 0 1rem;
+  }
+  
+  .list-group-item {
+    margin-bottom: 0.75rem;
+  }
+} 

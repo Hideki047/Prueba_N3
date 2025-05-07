@@ -1,0 +1,98 @@
+.pagina-blog {
+  background-color: var(--color-fondo);
+  min-height: 100vh;
+}
+
+.pagina-blog h1 {
+  color: var(--color-primario);
+  font-weight: 700;
+}
+
+.card {
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.blog-imagen {
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-post-imagen {
+  height: 400px;
+  object-fit: cover;
+}
+
+.card-title {
+  color: var(--color-primario);
+  font-weight: 600;
+}
+
+.card-text {
+  color: var(--color-secundario);
+}
+
+.comentarios {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.comentarios h4 {
+  color: var(--color-primario);
+  margin-bottom: 1.5rem;
+}
+
+.comentario {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-primario);
+}
+
+.comentario p {
+  margin-top: 0.5rem;
+  color: var(--color-texto-secundario);
+}
+
+.form-control {
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--color-accento);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn-primary {
+  padding: 0.5rem 2rem;
+}
+
+.btn-outline-primary {
+  border-width: 2px;
+}
+
+.text-muted {
+  color: var(--color-texto-secundario) !important;
+}
+
+@media (max-width: 767.98px) {
+  .blog-post-imagen {
+    height: 250px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+  }
+} 

@@ -1,30 +1,23 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./estilos/global.css";
 
-import Inicio from './PaginaPrincipal.jsx';
-import Eventos from './Eventos.jsx';
-import Galeria from './Galeria.jsx';
-import Blog from './Blog.jsx';
-import Contacto from './Contacto.jsx';
-import Cuenta from './Auth.jsx';
+import BarraNavegacion from "./componentes/BarraNavegacion/BarraNavegacion";
+import PiePagina from "./componentes/PiePagina/PiePagina";
+
+import Inicio from "./paginas/Inicio/Inicio";
+import Eventos from "./paginas/Eventos/Eventos";
+import Galeria from "./paginas/Galeria/Galeria";
+import Blog from "./paginas/Blog/Blog";
+import Contacto from "./paginas/Contacto/Contacto";
+import Cuenta from "./paginas/Cuenta/Cuenta";
 
 function App() {
   return (
     <Router>
       <div className="pagina">
-        <header>
-          <h1>Disco Stu's Dance Palace</h1>
-          <nav>
-            <Link to="/">Inicio</Link>
-            <Link to="/eventos">Eventos</Link>
-            <Link to="/galeria">Galería</Link>
-            <Link to="/blog">Blog</Link>
-            <Link to="/contacto">Contacto</Link>
-            <Link to="/cuenta">Mi Cuenta</Link>
-          </nav>
-        </header>
-
+        <BarraNavegacion />
+        
         <main>
           <Routes>
             <Route path="/" element={<Inicio />} />
@@ -35,6 +28,8 @@ function App() {
             <Route path="/cuenta" element={<Cuenta />} />
           </Routes>
         </main>
+
+        <PiePagina />
       </div>
     </Router>
   );

@@ -1,0 +1,78 @@
+footer {
+  margin-top: auto;
+  background: var(--gradiente-disco) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(255, 20, 147, 0.2),
+    rgba(0, 255, 255, 0.2),
+    rgba(255, 0, 255, 0.2)
+  );
+  animation: disco 5s ease infinite;
+}
+
+footer h5 {
+  color: var(--color-texto);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+footer .text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+footer a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: var(--color-texto) !important;
+  position: relative;
+}
+
+footer a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accento);
+  transition: all 0.3s ease;
+}
+
+footer a:hover::after {
+  width: 100%;
+}
+
+footer a:hover {
+  color: var(--color-accento) !important;
+  transform: translateX(5px);
+}
+
+footer hr {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 767.98px) {
+  footer .col-md-4 {
+    text-align: center;
+  }
+  
+  footer ul {
+    margin-bottom: 2rem;
+  }
+} 
