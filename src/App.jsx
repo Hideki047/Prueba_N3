@@ -13,7 +13,6 @@ function App() {
   return (
     <Router>
       <div className="pagina">
-        
         <header>
           <h1>Disco Stu's Dance Palace</h1>
           <nav>
