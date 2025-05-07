@@ -5,9 +5,9 @@
 
 ## 📋 Cómo Instalar y Ejecutar el Proyecto
 
-1. **Instalar Node.js y Git**
+1. **Bajar Node.js**
     - Node.js en tu equipo, si no lo tienes, descargalo de -> https://nodejs.org/
-    - clonar el repositorio: https://github.com/Hideki047/Prueba_N3
+    - Para verificar que se instaló bien, abre la terminal y escribe `node --version`
 
 2. **Preparar Todo**
     - Abre Visual Studio Code (u otro editor de codigo)
